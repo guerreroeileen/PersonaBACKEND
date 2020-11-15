@@ -116,7 +116,6 @@ public class PersonaService implements PersonaRepository{
 
 	@Override
 	public void deleteById(Long id) {
-
 		personaRepository.deleteById(id);
 	}
 
