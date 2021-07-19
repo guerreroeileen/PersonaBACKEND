@@ -43,7 +43,6 @@ public class PersonaREST {
 	private ResponseEntity<Boolean> deletePersona (@PathVariable ("id") Long id){
 		personaService.deleteById(id);
 		return ResponseEntity.ok(!(personaService.findById(id)!=null));
-		
 	}
 
 }
