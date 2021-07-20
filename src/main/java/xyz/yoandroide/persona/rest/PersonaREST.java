@@ -41,8 +41,7 @@ public class PersonaREST {
 	
 	@DeleteMapping (value = "delete/{id}")
 	private ResponseEntity<Boolean> deletePersona (@PathVariable ("id") Long id){
-		personaService.deleteById(id);
-		return ResponseEntity.ok(!(personaService.findById(id)!=null));
+		return ResponseEntity.ok(personaService.deleteById(id));
 	}
 
 }

@@ -40,8 +40,12 @@ public class PersonaService {
 	}
 
 
-	public void deleteById(Long id) {
-		personaRepository.deleteById(id);
+	public Boolean deleteById(Long id) {
+		if (personaRepository.existsById(id)) {
+			personaRepository.deleteById(id);
+			return true;
+		}
+		return false;
 	}
 
 	public void delete(Persona entity) {
