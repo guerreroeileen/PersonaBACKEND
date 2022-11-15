@@ -6,6 +6,7 @@ import xyz.yoandroide.persona.model.Estado;
 import xyz.yoandroide.persona.repository.EstadoRepository;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,7 +21,7 @@ public class EstadoService {
 
     public List<Estado> findAllByCountry(Long countryId) {
         return estadoRepository.findAll().stream()
-				.filter(estado -> estado.getPais().getId() == countryId)
+				.filter(estado -> Objects.equals(estado.getPais().getId(), countryId))
 				.collect(Collectors.toList());
     }
 }
