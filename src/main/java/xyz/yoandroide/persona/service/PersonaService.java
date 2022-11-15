@@ -43,7 +43,7 @@ public class PersonaService {
 	public Boolean deleteById(Long id) {
 		if (personaRepository.existsById(id)) {
 			personaRepository.deleteById(id);
-			return true;
+			return !personaRepository.existsById(id);
 		}
 		return false;
 	}
