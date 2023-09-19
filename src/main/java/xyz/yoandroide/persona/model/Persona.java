@@ -1,19 +1,20 @@
 package xyz.yoandroide.persona.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
 import java.io.Serializable;
 
 @Entity
 @Data
-@Table (name = "persona")
+@Table(name = "persona")
 public class Persona implements Serializable {
 	
 	@Id
@@ -24,7 +25,7 @@ public class Persona implements Serializable {
 	private int edad;
 	
 	@ManyToOne
-	@JoinColumn (name="id_pais")
+	@JoinColumn(name="id_pais")
 	private Pais pais;
 	@ManyToOne
 	@JoinColumn (name="id_estado")
